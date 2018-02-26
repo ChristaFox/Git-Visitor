@@ -2,11 +2,13 @@ import java.util.List;
 
 public class Git implements Visitable {
 
-    public Git() {
+    private List<GitCommit> commits;
+
+	public Git() {
     }
 
     public List<GitCommit> getCommits() {
-        return null;
+        return commits;
     }
 
     public void addCommit(GitCommit commit) {

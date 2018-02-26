@@ -30,6 +30,11 @@ public class LogStatVisitorTests extends TestCase {
 	}
 
 	public void testGetOutput() {
+//		SomeVisitor v = new ...
+//
+//		someGitObject.accept(v);
+//
+//		assertEquals( ..., v.getOutput());ertEquals( ..., v.getOutput());
 		fail("Not yet implemented");
 	}
 

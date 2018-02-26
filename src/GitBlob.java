@@ -3,6 +3,7 @@ import java.util.List;
 public class GitBlob extends GitObject implements GitTreeNode {
 
     private String data;
+    private List<GitTreeEntry> list;
 
 	public GitBlob(String hash, String data) {
         super(hash);
@@ -10,15 +11,17 @@ public class GitBlob extends GitObject implements GitTreeNode {
     }
 
     public String getData() {
-        return data;
+        return "blob " + (data.length() + 1) + "\n" + data + "\n";
     }
 
     @Override
     public List<GitTreeEntry> getChildren() {
-        return null;
+    		
+        return list;
     }
 
     @Override
     public void accept(Visitor v) {
+    		v.visit(this);
     }
 }

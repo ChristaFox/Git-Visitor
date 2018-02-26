@@ -10,4 +10,5 @@ public interface Visitor {
     public void postVisit(GitTreeEntry entry);
 
     public void visit(GitBlob blob);
+	public boolean isDone();
 }
