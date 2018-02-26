@@ -12,7 +12,7 @@ public class GitTreeEntry implements Visitable {
     }
 
     public int getMode() {
-        return 100644;
+        return mode;
     }
 
     public String getFilename() {
@@ -20,6 +20,19 @@ public class GitTreeEntry implements Visitable {
     }
 
     @Override
-    public void accept(Visitor v) {
+    public void accept(Visitor v)     {
+        if(v.isDone()) {
+            return;
+        }
+        
+		v.preVisit(this);
+		this.accept(v);
+        
+        if(v.isDone()) {
+            return;
+        }
+        
+        v.postVisit(this);
     }
+    
 }

@@ -39,5 +39,6 @@ class VisitorTest {
 	void testVisit() {
 		//GitBlob blob
 		fail("Not yet implemented");
+	}
 
 }
